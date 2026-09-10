@@ -7,7 +7,7 @@ using namespace std;
 
 std::pair<int,int> twoSumBruteForce(const std::vector<int>& nums, int target){
     
-    for (int i = 0; i= nums.size(); i++){
+    for (int i = 0; i < nums.size(); i++){
         for(int j = i + 1; j < nums.size(); j++){
             if(nums.at(i) + nums.at(j) == target){
                 return {i, j};
@@ -46,19 +46,17 @@ int main() {
     std::cout << "Indicies returned: "
               << bruteForceResult.first << ", "
               << bruteForceResult.second << std::endl;
-
-    std::cout << "Values at Indices: " std::endl;
+    std::cout << "Values at Indices: " <<std::endl;
     std::cout << nums[bruteForceResult.first] << ", "
-              << nums[bruteForceResult.second] << std::endl;
+             << nums[bruteForceResult.second] << std::endl;
     
     std::cout <<"Hash-Based Lookup Function: " <<std::endl;
     std::cout << "Indicies returned: "
               << hashResult.first << ", "
               << hashResult.second << std::endl;
-
-    std::cout << "Values at Indices: "
-              << nums[hashResult.first] << ", "
-              << nums[hashResult.second] << std::endl;
+    std::cout << "Values at Indices: " <<std::endl;
+    std::cout << nums[hashResult.first] << ", "
+             << nums[hashResult.second] << std::endl;
 
     return 0;
 }
