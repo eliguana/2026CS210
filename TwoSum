@@ -1,0 +1,40 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+#include <utility>
+
+std::pair<int,int> twoSumBruteForce(const std::vector<int>& nums, int target){
+    
+    for (int i = 0; i= nums.size(); i++){
+        for(int j = i + 1; j < nums.size(); j++){
+            if(nums.at(i) + nums.at(j) == target){
+                return {i, j};
+            }
+        }
+    }
+    return (-1,-1);
+}
+std::pair<int,int> twoSumHash(const std::vector<int>& nums, int target){
+    
+    std::unordered_map<int, int> hash_table;
+    for (int i = 0; i < nums.size(); i++){
+
+        int second_int = target - nums.at(i);
+
+        if (hash_table.find(second_int)!= hash_table.end()){
+            return {hash_table[second_int] , i };
+            {
+        } else {hash_table[nums.at(i)] = i;
+            }
+            return {-1, -1};
+        }
+    }
+}
+
+int main() {
+    // Write C++ code here
+    std::cout << "Start small. Ship something.";
+
+    return 0;
+}
