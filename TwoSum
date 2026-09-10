@@ -3,6 +3,7 @@
 #include <vector>
 #include <unordered_map>
 #include <utility>
+using namespace std;
 
 std::pair<int,int> twoSumBruteForce(const std::vector<int>& nums, int target){
     
@@ -13,8 +14,9 @@ std::pair<int,int> twoSumBruteForce(const std::vector<int>& nums, int target){
             }
         }
     }
-    return {-1,-1};
+    return {-1,-1}; 
 }
+
 std::pair<int,int> twoSumHash(const std::vector<int>& nums, int target){
     
     std::unordered_map<int, int> hash_table;
@@ -32,9 +34,31 @@ std::pair<int,int> twoSumHash(const std::vector<int>& nums, int target){
     }
             return {-1, -1};
         }
+
 int main() {
-    // Write C++ code here
-    std::cout << "Start small. Ship something.";
+    
+    std::vector<int> nums {15, 4, 18, 8, 19, 22, 24, 59, 59, 20, 18, 12, 36, 42, 9};
+    int target = 24;
+    std::pair<int, int> bruteForceResult = twoSumBruteForce(nums, target);
+    std::pair<int, int> hashResult = twoSumHash(nums, target);
+
+    std::cout << "BruteForce Function: " <<std::endl;
+    std::cout << "Indicies returned: "
+              << bruteForceResult.first << ", "
+              << bruteForceResult.second << std::endl;
+
+    std::cout << "Values at Indices: " std::endl;
+    std::cout << nums[bruteForceResult.first] << ", "
+              << nums[bruteForceResult.second] << std::endl;
+    
+    std::cout <<"Hash-Based Lookup Function: " <<std::endl;
+    std::cout << "Indicies returned: "
+              << hashResult.first << ", "
+              << hashResult.second << std::endl;
+
+    std::cout << "Values at Indices: "
+              << nums[hashResult.first] << ", "
+              << nums[hashResult.second] << std::endl;
 
     return 0;
 }
