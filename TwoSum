@@ -34,29 +34,46 @@ std::pair<int,int> twoSumHash(const std::vector<int>& nums, int target){
     }
             return {-1, -1};
         }
-
-int main() {
-    
-    std::vector<int> nums {15, 4, 18, 8, 19, 22, 24, 59, 59, 20, 18, 12, 36, 42, 9};
-    int target = 24;
+void testCases(std::vector<int> nums, int target){
     std::pair<int, int> bruteForceResult = twoSumBruteForce(nums, target);
     std::pair<int, int> hashResult = twoSumHash(nums, target);
 
     std::cout << "BruteForce Function: " <<std::endl;
-    std::cout << "Indicies returned: "
+    std::cout << "Indices returned: "
               << bruteForceResult.first << ", "
               << bruteForceResult.second << std::endl;
     std::cout << "Values at Indices: " <<std::endl;
     std::cout << nums[bruteForceResult.first] << ", "
              << nums[bruteForceResult.second] << std::endl;
-    
+
     std::cout <<"Hash-Based Lookup Function: " <<std::endl;
-    std::cout << "Indicies returned: "
+    std::cout << "Indices returned: "
               << hashResult.first << ", "
               << hashResult.second << std::endl;
     std::cout << "Values at Indices: " <<std::endl;
     std::cout << nums[hashResult.first] << ", "
-             << nums[hashResult.second] << std::endl;
+              << nums[hashResult.second] << std::endl;
+    std::cout <<"________________________________________" << std::endl;          
+}
+int main() {
+    
+    //Test 1:
+    std::vector<int> nums1 {15, 4, 18, 8, 19, 22, 24, 59, 59, 20, 18, 12, 36, 42, 9};
+    testCases(nums1, 24);
 
-    return 0;
+    //Test 2:
+    std::vector<int> nums2 {1, 50, 25, 25, 50, 10, 1};
+    testCases(nums2, 100);
+    
+    //Test 3:
+    std::vector<int> nums3 {2, 4 , 6 , 8, 10, 12, 14, 16};
+    testCases(nums3, 22);
+    
+    //Test 4:
+    std::vector<int> nums4 {1000, 10, 1, 200000, 6, 500};
+    testCases(nums4, 1500);
+
+    //Test 5:
+    std::vector<int> nums5  {15, 30, 60, 120, 240, 480};
+    testCases(nums5, 29);
 }
