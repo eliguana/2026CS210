@@ -1,0 +1,3 @@
+Test both functions with {15, 4, 18, 8, 19, 22, 24, 59, 59, 20, 18, 12, 36, 42, 9} and target = 24, plus at least four additional test cases that you create.
+Print the returned indices, the values at those indices, and whether the result is valid.
+Explain the time and space complexity of each approach and why the optimized method improves on the brute-force method.
