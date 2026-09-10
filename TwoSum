@@ -36,23 +36,35 @@ std::pair<int,int> twoSumHash(const std::vector<int>& nums, int target){
         }
 void testCases(std::vector<int> nums, int target){
     std::pair<int, int> bruteForceResult = twoSumBruteForce(nums, target);
-    std::pair<int, int> hashResult = twoSumHash(nums, target);
-
+    std::pair<int, int> hashSumResult = twoSumHash(nums, target);
+    bool bfValidResult = nums [bruteForceResult.first] + nums [bruteForceResult.second] == target;
+        if(bfValidResult){
+                std::cout << "BruteForce Valid: Yes" << std::endl;
+              } else {
+                std::cout << "BruteForceValid: Yes" << std::endl;
+              }
+    bool shValidResult = nums [hashSumResult.first] + nums [hashSumResult.second] == target;
+        if(shValidResult){
+                std::cout << "HashSum Valid: Yes" << std::endl;
+              } else {
+                std::cout << "HashSum Valid: Yes" << std::endl;
+              }           
     std::cout << "BruteForce Function: " <<std::endl;
     std::cout << "Indices returned: "
               << bruteForceResult.first << ", "
               << bruteForceResult.second << std::endl;
     std::cout << "Values at Indices: " <<std::endl;
     std::cout << nums[bruteForceResult.first] << ", "
-             << nums[bruteForceResult.second] << std::endl;
+              << nums[bruteForceResult.second] << std::endl;
 
     std::cout <<"Hash-Based Lookup Function: " <<std::endl;
     std::cout << "Indices returned: "
-              << hashResult.first << ", "
-              << hashResult.second << std::endl;
+              << hashSumResult.first << ", "
+              << hashSumResult.second << std::endl;
     std::cout << "Values at Indices: " <<std::endl;
-    std::cout << nums[hashResult.first] << ", "
-              << nums[hashResult.second] << std::endl;
+    std::cout << nums[hashSumResult.first] << ", "
+              << nums[hashSumResult.second] << std::endl;
+
     std::cout <<"________________________________________" << std::endl;          
 }
 int main() {
