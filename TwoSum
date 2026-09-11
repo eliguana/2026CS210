@@ -40,13 +40,13 @@ void testCases(std::vector<int> nums, int target){
         if(bfValidResult){
                 std::cout << "BruteForce Valid: Yes" << std::endl;
               } else {
-                std::cout << "BruteForceValid: Yes" << std::endl;
+                std::cout << "BruteForceValid: No" << std::endl;
               }
     bool shValidResult = nums [hashSumResult.first] + nums [hashSumResult.second] == target;
         if(shValidResult){
                 std::cout << "HashSum Valid: Yes" << std::endl;
               } else {
-                std::cout << "HashSum Valid: Yes" << std::endl;
+                std::cout << "HashSum Valid: No" << std::endl;
               }           
     std::cout << "BruteForce Function: " <<std::endl;
     std::cout << "Indices returned: "
